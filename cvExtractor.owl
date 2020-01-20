@@ -1,0 +1,462 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY swrl "http://www.w3.org/2003/11/swrl#" >
+    <!ENTITY swrlb "http://www.w3.org/2003/11/swrlb#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY cu "http://localhost/ConceptUpper.owl#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY sa "http://localhost/SemanticAssistants.owl#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY protege "http://protege.stanford.edu/plugins/owl/protege#" >
+    <!ENTITY xsp "http://www.owl-ontologies.com/2005/08/07/xsp.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://localhost/CVInfoExtractor.owl#"
+     xml:base="http://localhost/CVInfoExtractor.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+     xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+     xmlns:sa="http://localhost/SemanticAssistants.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:cu="http://localhost/ConceptUpper.owl#">
+    <owl:Ontology rdf:about="http://localhost/CVInfoExtractor.owl">
+        <owl:imports rdf:resource="http://localhost/SemanticAssistants.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost/ConceptUpper.owl#hasFormat -->
+
+    <owl:AnnotationProperty rdf:about="&cu;hasFormat"/>
+    
+
+
+    <!-- http://localhost/ConceptUpper.owl#hasLabel -->
+
+    <owl:AnnotationProperty rdf:about="&cu;hasLabel"/>
+    
+
+
+    <!-- http://localhost/ConceptUpper.owl#isActualArtifact -->
+
+    <owl:AnnotationProperty rdf:about="&cu;isActualArtifact"/>
+    
+
+
+    <!-- http://localhost/ConceptUpper.owl#isProducedBy -->
+
+    <owl:AnnotationProperty rdf:about="&cu;isProducedBy"/>
+    
+
+
+    <!-- http://localhost/ConceptUpper.owl#producesOutput -->
+
+    <owl:AnnotationProperty rdf:about="&cu;producesOutput"/>
+    
+
+
+    <!-- http://localhost/SemanticAssistants.owl#appFileName -->
+
+    <owl:AnnotationProperty rdf:about="&sa;appFileName"/>
+    
+
+
+    <!-- http://localhost/SemanticAssistants.owl#hasFeature -->
+
+    <owl:AnnotationProperty rdf:about="&sa;hasFeature"/>
+    
+
+
+    <!-- http://localhost/SemanticAssistants.owl#hasGATEName -->
+
+    <owl:AnnotationProperty rdf:about="&sa;hasGATEName"/>
+    
+
+
+    <!-- http://localhost/SemanticAssistants.owl#hasInputNaturalLanguage -->
+
+    <owl:AnnotationProperty rdf:about="&sa;hasInputNaturalLanguage"/>
+    
+
+
+    <!-- http://localhost/SemanticAssistants.owl#hasOutputNaturalLanguage -->
+
+    <owl:AnnotationProperty rdf:about="&sa;hasOutputNaturalLanguage"/>
+    
+
+
+    <!-- http://localhost/SemanticAssistants.owl#isInAnnotationSet -->
+
+    <owl:AnnotationProperty rdf:about="&sa;isInAnnotationSet"/>
+    
+
+
+    <!-- http://localhost/SemanticAssistants.owl#isPerDocument -->
+
+    <owl:AnnotationProperty rdf:about="&sa;isPerDocument"/>
+    
+
+
+    <!-- http://localhost/SemanticAssistants.owl#publishAsNLPService -->
+
+    <owl:AnnotationProperty rdf:about="&sa;publishAsNLPService"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost/SemanticAssistants.owl#GATEAnnotation -->
+
+    <owl:Class rdf:about="&sa;GATEAnnotation"/>
+    
+
+
+    <!-- http://localhost/SemanticAssistants.owl#GATEPipeline -->
+
+    <owl:Class rdf:about="&sa;GATEPipeline"/>
+    
+
+
+    <!-- http://localhost/SemanticAssistants.owl#GATE_OutputArtifact -->
+
+    <owl:Class rdf:about="&sa;GATE_OutputArtifact"/>
+    
+
+
+    <!-- http://localhost/SemanticAssistants.owl#NLPTool -->
+
+    <owl:Class rdf:about="&sa;NLPTool"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost/CVInfoExtractor.owl#CVInfoExtractor -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/CVInfoExtractor.owl#CVInfoExtractor">
+        <rdf:type rdf:resource="&sa;GATEPipeline"/>
+        <rdf:type rdf:resource="&sa;GATE_OutputArtifact"/>
+        <rdf:type rdf:resource="&sa;NLPTool"/>
+        <sa:hasGATEName rdf:datatype="&xsd;string">CV Analyer</sa:hasGATEName>
+        <rdfs:comment rdf:datatype="&xsd;string">Identifies and locates entities like Job Position, Education, Skills and organizations and add the related CVs in their feature list.</rdfs:comment>
+        <sa:publishAsNLPService rdf:datatype="&xsd;boolean">true</sa:publishAsNLPService>
+        <sa:appFileName>../Resources/GatePipelines/CVAnalyzer/application.xgapp</sa:appFileName>
+        <cu:hasLabel>CV Analyzer</cu:hasLabel>
+        <cu:producesOutput rdf:resource="http://localhost/CVInfoExtractor.owl#EducationAnnotationOutput"/>
+        <cu:producesOutput rdf:resource="http://localhost/CVInfoExtractor.owl#ExperienceYearAnnotationOutput"/>
+        <cu:producesOutput rdf:resource="http://localhost/CVInfoExtractor.owl#OrganizationAnnotationOutput"/>
+        <cu:producesOutput rdf:resource="http://localhost/CVInfoExtractor.owl#PositionOutput"/>
+        <cu:producesOutput rdf:resource="http://localhost/CVInfoExtractor.owl#TechnicalSkillAnnotationOutput"/>
+        <sa:hasOutputNaturalLanguage rdf:resource="&cu;fr"/>
+        <sa:hasInputNaturalLanguage rdf:resource="&cu;frt"/>
+        <cu:hasFormat rdf:resource="&sa;GATECorpusPipeline_Format"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/CVInfoExtractor.owl#EducationAnnotation -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/CVInfoExtractor.owl#EducationAnnotation">
+        <rdf:type rdf:resource="&sa;GATEAnnotation"/>
+        <sa:hasFeature rdf:datatype="&xsd;string">sortedCV</sa:hasFeature>
+        <sa:hasFeature rdf:datatype="&xsd;string">string</sa:hasFeature>
+        <sa:hasGATEName>AcademicEducation</sa:hasGATEName>
+        <sa:isInAnnotationSet></sa:isInAnnotationSet>
+        <sa:hasFeature xml:lang="en">relatedCV</sa:hasFeature>
+        <cu:hasFormat rdf:resource="&sa;Standard_GATEAnnotation_Format"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/CVInfoExtractor.owl#EducationAnnotationOutput -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/CVInfoExtractor.owl#EducationAnnotationOutput">
+        <rdf:type rdf:resource="&sa;GATE_OutputArtifact"/>
+        <sa:isPerDocument rdf:datatype="&xsd;boolean">true</sa:isPerDocument>
+        <sa:hasGATEName>AcademicEducation</sa:hasGATEName>
+        <cu:isProducedBy rdf:resource="http://localhost/CVInfoExtractor.owl#CVInfoExtractor"/>
+        <cu:isActualArtifact rdf:resource="http://localhost/CVInfoExtractor.owl#EducationAnnotation"/>
+        <cu:hasFormat rdf:resource="&sa;Standard_GATEAnnotation_Format"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/CVInfoExtractor.owl#ExperieceYearAnnotation -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/CVInfoExtractor.owl#ExperieceYearAnnotation">
+        <rdf:type rdf:resource="&sa;GATEAnnotation"/>
+        <sa:hasGATEName rdf:datatype="&xsd;string">ExperienceYear</sa:hasGATEName>
+        <sa:hasFeature rdf:datatype="&xsd;string">sortedCV</sa:hasFeature>
+        <sa:hasFeature rdf:datatype="&xsd;string">string</sa:hasFeature>
+        <sa:isInAnnotationSet></sa:isInAnnotationSet>
+        <sa:hasFeature>relatedCV</sa:hasFeature>
+        <cu:hasFormat rdf:resource="&sa;Standard_GATEAnnotation_Format"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/CVInfoExtractor.owl#ExperienceYearAnnotationOutput -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/CVInfoExtractor.owl#ExperienceYearAnnotationOutput">
+        <rdf:type rdf:resource="&sa;GATE_OutputArtifact"/>
+        <sa:hasGATEName rdf:datatype="&xsd;string">ExperienceYear</sa:hasGATEName>
+        <sa:isPerDocument rdf:datatype="&xsd;boolean">true</sa:isPerDocument>
+        <cu:isProducedBy rdf:resource="http://localhost/CVInfoExtractor.owl#CVInfoExtractor"/>
+        <cu:isActualArtifact rdf:resource="http://localhost/CVInfoExtractor.owl#ExperieceYearAnnotation"/>
+        <cu:hasFormat rdf:resource="&sa;Standard_GATEAnnotation_Format"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/CVInfoExtractor.owl#JobPositionAnnotation -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/CVInfoExtractor.owl#JobPositionAnnotation">
+        <rdf:type rdf:resource="&sa;GATEAnnotation"/>
+        <sa:hasGATEName rdf:datatype="&xsd;string">Position</sa:hasGATEName>
+        <sa:hasFeature rdf:datatype="&xsd;string">relatedCV</sa:hasFeature>
+        <sa:hasFeature rdf:datatype="&xsd;string">sortedCV</sa:hasFeature>
+        <sa:isInAnnotationSet></sa:isInAnnotationSet>
+        <cu:hasFormat rdf:resource="&sa;Standard_GATEAnnotation_Format"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/CVInfoExtractor.owl#JobPositionAnnotationOutput -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/CVInfoExtractor.owl#JobPositionAnnotationOutput">
+        <rdf:type rdf:resource="&sa;GATE_OutputArtifact"/>
+        <sa:hasGATEName rdf:datatype="&xsd;string">Position</sa:hasGATEName>
+        <sa:isPerDocument rdf:datatype="&xsd;boolean">true</sa:isPerDocument>
+        <cu:isProducedBy rdf:resource="http://localhost/CVInfoExtractor.owl#CVInfoExtractor"/>
+        <cu:isActualArtifact rdf:resource="http://localhost/CVInfoExtractor.owl#JobPositionAnnotation"/>
+        <cu:hasFormat rdf:resource="&sa;Standard_GATEAnnotation_Format"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/CVInfoExtractor.owl#OrganizationAnnotation -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/CVInfoExtractor.owl#OrganizationAnnotation">
+        <rdf:type rdf:resource="&sa;GATEAnnotation"/>
+        <sa:hasGATEName rdf:datatype="&xsd;string">OtherSkill</sa:hasGATEName>
+        <sa:hasFeature>relatedCV</sa:hasFeature>
+        <sa:isInAnnotationSet></sa:isInAnnotationSet>
+        <sa:hasFeature>sortedCV</sa:hasFeature>
+        <cu:hasFormat rdf:resource="&sa;Standard_GATEAnnotation_Format"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/CVInfoExtractor.owl#OrganizationAnnotationOutput -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/CVInfoExtractor.owl#OrganizationAnnotationOutput">
+        <rdf:type rdf:resource="&sa;GATE_OutputArtifact"/>
+        <sa:hasGATEName rdf:datatype="&xsd;string">OtherSkill</sa:hasGATEName>
+        <sa:isPerDocument rdf:datatype="&xsd;boolean">true</sa:isPerDocument>
+        <cu:isProducedBy rdf:resource="http://localhost/CVInfoExtractor.owl#CVInfoExtractor"/>
+        <cu:isActualArtifact rdf:resource="http://localhost/CVInfoExtractor.owl#OrganizationAnnotation"/>
+        <cu:hasFormat rdf:resource="&sa;Standard_GATEAnnotation_Format"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/CVInfoExtractor.owl#PersonAnnotation -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/CVInfoExtractor.owl#PersonAnnotation">
+        <sa:hasGATEName rdf:datatype="&xsd;string">Person</sa:hasGATEName>
+        <sa:isInAnnotationSet xml:lang="en"></sa:isInAnnotationSet>
+        <sa:hasFeature xml:lang="en">gender</sa:hasFeature>
+        <cu:hasFormat rdf:resource="&sa;Standard_GATEAnnotation_Format"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/CVInfoExtractor.owl#Position -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/CVInfoExtractor.owl#Position">
+        <rdf:type rdf:resource="&sa;GATEAnnotation"/>
+        <sa:hasGATEName rdf:datatype="&xsd;string">Position</sa:hasGATEName>
+        <sa:hasFeature rdf:datatype="&xsd;string">relatedCV</sa:hasFeature>
+        <sa:hasFeature rdf:datatype="&xsd;string">sortedCV</sa:hasFeature>
+        <sa:isInAnnotationSet></sa:isInAnnotationSet>
+        <cu:hasFormat rdf:resource="&sa;Standard_GATEAnnotation_Format"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/CVInfoExtractor.owl#PositionOutput -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/CVInfoExtractor.owl#PositionOutput">
+        <rdf:type rdf:resource="&sa;GATE_OutputArtifact"/>
+        <sa:hasGATEName rdf:datatype="&xsd;string">Position</sa:hasGATEName>
+        <sa:isPerDocument rdf:datatype="&xsd;boolean">true</sa:isPerDocument>
+        <cu:isProducedBy rdf:resource="http://localhost/CVInfoExtractor.owl#CVInfoExtractor"/>
+        <cu:isActualArtifact rdf:resource="http://localhost/CVInfoExtractor.owl#Position"/>
+        <cu:hasFormat rdf:resource="&sa;Standard_GATEAnnotation_Format"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/CVInfoExtractor.owl#TechnicalSkillAnnotation -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/CVInfoExtractor.owl#TechnicalSkillAnnotation">
+        <rdf:type rdf:resource="&sa;GATEAnnotation"/>
+        <sa:hasGATEName rdf:datatype="&xsd;string">TechnicalSkill</sa:hasGATEName>
+        <sa:hasFeature rdf:datatype="&xsd;string">sortedCV</sa:hasFeature>
+        <sa:hasFeature>relatedCV</sa:hasFeature>
+        <sa:isInAnnotationSet></sa:isInAnnotationSet>
+        <cu:hasFormat rdf:resource="&sa;Standard_GATEAnnotation_Format"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost/CVInfoExtractor.owl#TechnicalSkillAnnotationOutput -->
+
+    <owl:NamedIndividual rdf:about="http://localhost/CVInfoExtractor.owl#TechnicalSkillAnnotationOutput">
+        <rdf:type rdf:resource="&sa;GATE_OutputArtifact"/>
+        <sa:hasGATEName rdf:datatype="&xsd;string">TechnicalSkill</sa:hasGATEName>
+        <sa:isPerDocument rdf:datatype="&xsd;boolean">true</sa:isPerDocument>
+        <cu:isProducedBy rdf:resource="http://localhost/CVInfoExtractor.owl#CVInfoExtractor"/>
+        <cu:isActualArtifact rdf:resource="http://localhost/CVInfoExtractor.owl#TechnicalSkillAnnotation"/>
+        <cu:hasFormat rdf:resource="&sa;Standard_GATEAnnotation_Format"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://localhost/CVInfoExtractor.owl#PersonLocationExtractor">
+        <rdfs:comment rdf:datatype="&xsd;string">Identifies and locates entities like persons, locations, and organizations etc.</rdfs:comment>
+        <sa:hasGATEName rdf:datatype="&xsd;string">Information Extractor</sa:hasGATEName>
+        <sa:publishAsNLPService rdf:datatype="&xsd;boolean">true</sa:publishAsNLPService>
+        <sa:appFileName xml:lang="en">../Resources/GatePipelines/Annie/application.xgapp</sa:appFileName>
+        <cu:hasLabel xml:lang="en">Information Extractor</cu:hasLabel>
+        <cu:producesOutput rdf:resource="http://localhost/CVInfoExtractor.owl#AddressAnnotationOutput"/>
+        <cu:producesOutput rdf:resource="http://localhost/CVInfoExtractor.owl#DateAnnotationOutput"/>
+        <cu:producesOutput rdf:resource="http://localhost/CVInfoExtractor.owl#LocationAnnotationOutput"/>
+        <cu:producesOutput rdf:resource="http://localhost/CVInfoExtractor.owl#MoneyAnnotationOutput"/>
+        <cu:producesOutput rdf:resource="http://localhost/CVInfoExtractor.owl#OrganizationAnnotationOutput"/>
+        <cu:producesOutput rdf:resource="http://localhost/CVInfoExtractor.owl#PercentAnnotationOutput"/>
+        <cu:producesOutput rdf:resource="http://localhost/CVInfoExtractor.owl#PersonAnnotationOutput"/>
+        <sa:hasInputNaturalLanguage rdf:resource="&cu;fr"/>
+        <sa:hasOutputNaturalLanguage rdf:resource="&cu;fr"/>
+        <cu:hasFormat rdf:resource="&sa;GATECorpusPipeline_Format"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://localhost/CVInfoExtractor.owl#PercentAnnotationOutput">
+        <sa:hasGATEName rdf:datatype="&xsd;string">Percent</sa:hasGATEName>
+        <sa:isPerDocument rdf:datatype="&xsd;boolean">true</sa:isPerDocument>
+        <cu:isActualArtifact rdf:resource="http://localhost/CVInfoExtractor.owl#PercentAnnotation"/>
+        <cu:isProducedBy rdf:resource="http://localhost/CVInfoExtractor.owl#PersonLocationExtractor"/>
+        <cu:hasFormat rdf:resource="&sa;Standard_GATEAnnotation_Format"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://localhost/CVInfoExtractor.owl#LocationAnnotationOutput">
+        <rdfs:comment rdf:datatype="&xsd;string"></rdfs:comment>
+        <sa:hasGATEName rdf:datatype="&xsd;string">Location</sa:hasGATEName>
+        <sa:isPerDocument rdf:datatype="&xsd;boolean">true</sa:isPerDocument>
+        <cu:isActualArtifact rdf:resource="http://localhost/CVInfoExtractor.owl#LocationAnnotation"/>
+        <cu:isProducedBy rdf:resource="http://localhost/CVInfoExtractor.owl#PersonLocationExtractor"/>
+        <cu:hasFormat rdf:resource="&sa;Standard_GATEAnnotation_Format"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://localhost/CVInfoExtractor.owl#MoneyAnnotation">
+        <sa:hasGATEName rdf:datatype="&xsd;string">Money</sa:hasGATEName>
+        <sa:hasFeature xml:lang="en">kind</sa:hasFeature>
+        <cu:hasFormat rdf:resource="&sa;Standard_GATEAnnotation_Format"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://localhost/CVInfoExtractor.owl#PersonAnnotationOutput">
+        <rdfs:comment rdf:datatype="&xsd;string"></rdfs:comment>
+        <sa:hasGATEName rdf:datatype="&xsd;string">Person</sa:hasGATEName>
+        <sa:isPerDocument rdf:datatype="&xsd;boolean">true</sa:isPerDocument>
+        <cu:isActualArtifact rdf:resource="http://localhost/CVInfoExtractor.owl#PersonAnnotation"/>
+        <cu:isProducedBy rdf:resource="http://localhost/CVInfoExtractor.owl#PersonLocationExtractor"/>
+        <cu:hasFormat rdf:resource="&sa;Standard_GATEAnnotation_Format"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://localhost/CVInfoExtractor.owl#MoneyAnnotationOutput">
+        <sa:hasGATEName rdf:datatype="&xsd;string"></sa:hasGATEName>
+        <sa:isPerDocument rdf:datatype="&xsd;boolean">true</sa:isPerDocument>
+        <cu:isActualArtifact rdf:resource="http://localhost/CVInfoExtractor.owl#MoneyAnnotation"/>
+        <cu:isProducedBy rdf:resource="http://localhost/CVInfoExtractor.owl#PersonLocationExtractor"/>
+        <cu:hasFormat rdf:resource="&sa;Standard_GATEAnnotation_Format"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://localhost/CVInfoExtractor.owl#AddressAnnotation">
+        <sa:hasGATEName rdf:datatype="&xsd;string">Address</sa:hasGATEName>
+        <sa:hasFeature xml:lang="en">kind</sa:hasFeature>
+        <cu:hasFormat rdf:resource="&sa;Standard_GATEAnnotation_Format"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://localhost/CVInfoExtractor.owl#DateAnnotationOutput">
+        <sa:hasGATEName rdf:datatype="&xsd;string">AcademicEducation</sa:hasGATEName>
+        <sa:isPerDocument rdf:datatype="&xsd;boolean">true</sa:isPerDocument>
+        <cu:isActualArtifact rdf:resource="http://localhost/CVInfoExtractor.owl#DateAnnotation"/>
+        <cu:isProducedBy rdf:resource="http://localhost/CVInfoExtractor.owl#PersonLocationExtractor"/>
+        <cu:hasFormat rdf:resource="&sa;Standard_GATEAnnotation_Format"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://localhost/CVInfoExtractor.owl#LocationAnnotation">
+        <sa:hasGATEName rdf:datatype="&xsd;string">AcademicEducation</sa:hasGATEName>
+        <sa:isInAnnotationSet xml:lang="en"></sa:isInAnnotationSet>
+        <sa:hasFeature xml:lang="en">EducationType</sa:hasFeature>
+        <cu:hasFormat rdf:resource="&sa;Standard_GATEAnnotation_Format"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://localhost/CVInfoExtractor.owl#AddressAnnotationOutput">
+        <sa:hasGATEName rdf:datatype="&xsd;string">Address</sa:hasGATEName>
+        <sa:isPerDocument rdf:datatype="&xsd;boolean">true</sa:isPerDocument>
+        <cu:isActualArtifact rdf:resource="http://localhost/CVInfoExtractor.owl#AddressAnnotation"/>
+        <cu:isProducedBy rdf:resource="http://localhost/CVInfoExtractor.owl#PersonLocationExtractor"/>
+        <cu:hasFormat rdf:resource="&sa;Standard_GATEAnnotation_Format"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://localhost/CVInfoExtractor.owl#PercentAnnotation">
+        <sa:hasGATEName rdf:datatype="&xsd;string">Percent</sa:hasGATEName>
+        <cu:hasFormat rdf:resource="&sa;Standard_GATEAnnotation_Format"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://localhost/CVInfoExtractor.owl#DateAnnotation">
+        <sa:hasGATEName rdf:datatype="&xsd;string">Date</sa:hasGATEName>
+        <sa:hasFeature xml:lang="en">kind</sa:hasFeature>
+        <cu:hasFormat rdf:resource="&sa;Standard_GATEAnnotation_Format"/>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
